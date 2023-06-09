@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html> 
+    <head>
+        <link href="./stylesheet.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        
+        <div class="container unblur">
+            <header>
+                <div class="HeaderClass">
+                    <div class="MainTitle">
+                        <p> CraftTracker</p>  
+                    </div>
+                    <div class="SearchBarClass">
+                        <input type="text" id="HeadermyInput" name="usernameThing" placeholder="Username" class="SearchBar">
+                        <button id="submitButton" onclick="checkPlayerStats()" class="SearchBarEnter">Search</button> <br>
+                    </div>
+                </div>
+                
+            </header>
+            
+            <main>
+                <div class="container2">
+                    <div class="row1">
+                        <div class="TitleText">
+                            <h1> Look up Players!</h1>
+                        </div>
+                        <div class="SubTitleText">
+                            <h4> V: 0.1</h4>
+                        </div>
+                        <div class="TextnSearch">
+                            <p>We use Hypixels <b>Official</b>  API</p> <br> <br>
+                            <p>Using the Hypixel API effectively requires a combination of knowledge, creativity, and attention to detail. As an avid user of the Hypixel server, you have honed your skills in navigating the API's extensive documentation, understanding its endpoints, and utilizing the available data to your advantage. With a clear understanding of the API's capabilities, you craft innovative applications that enhance your gaming experience. Whether it's developing a personalized leaderboard to track your progress, creating a custom bot to automate routine tasks, or building a dynamic application to analyze player statistics, you utilize the Hypixel API to its fullest potential, pushing boundaries and unleashing your imagination. Your proficiency in utilizing the Hypixel API empowers you to stay ahead of the game and amplify the joy you derive from your Hypixel adventures.</p>
+                            <input type="text" id="myInput" name="usernameThing" placeholder="Username">
+                            <button id="submitButton" onclick="checkPlayerStats()">Search</button><br>
+                            
+                        </div>
+                        
+                    </div>
+                    <div class="row2">
+                        <div class="PlayerStats">
+                            <p id="PlayerNameULookedUp" class="PlayerNameclass"><b>User</b></p>
+                            <h1 id="RankStat">Rank: </h1>
+                            <h1 id="PlayernameStat">Playername: </h1>
+                            <h1 id="UserIdStat">Userid: </h1>
+                            <h1 id="DiscordStat">Discord </h1>
+                            <h1 id="GadgetStat">Current-Gadget: </h1>
+                            <h1 id="ParticleStat">Particle: </h1>
+                        </div>
+                    </div>        
+                     <script src="./api_contact.js"></script>
+                </div>
+                
+            </main>
+            
+            <aside>
+                <button class="ButtonAsideHome"> Home </button>
+
+            </aside>
+            <footer>
+
+            </footer>
+        </div>
+    </body>
+
+    
+</html>
