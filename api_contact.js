@@ -17,6 +17,12 @@ let GadgetStatText = document.getElementById("GadgetStat");
 let ParticleStatText = document.getElementById("ParticleStat");
 let PlayerNameULookedUpText = document.getElementById("PlayerNameULookedUp");
 
+let BedwarsCoinStatText = document.getElementById("BedwarsCoinStat") ;
+let BedwarsExperenceStatText = document.getElementById("BedwarsExperenceStat")
+let BedsLostStatText = document.getElementById("BedsLostStat")
+let BedsDestroyedStatText = document.getElementById("BedsDestroyedStat")
+let GamesWonStatsText = document.getElementById("GamesWonStats")
+
 const playerName = "im_a_squid_kid";
 const playerUUID = "get my user id";
 
@@ -88,11 +94,54 @@ function checkPlayerStats() {
            } catch(error) {
             console.log("L user no Particle")
            }
-
-            
-            
+   
             
             
         })
         .catch(error => console.log("Network Error", error))    
 }
+function checkPlayerStats2() {
+    const textBox = document.getElementById("myInput").value;
+    fetch(`https://api.hypixel.net/player?key=abc419b9-d001-4274-8b18-791294b1543d&name=${textBox}`)
+        .then(response => response.json())
+        .then(data => {
+
+            try {
+                stat6 = data["player"]["stats"]["Bedwars"]["coins"]
+                console.log(stat6)
+                BedwarsCoinStatText.innerHTML = `Coins: ${stat6}`
+               } catch(error) {
+                console.log("L user no coins")
+               }
+               try {
+                stat7 = data["player"]["stats"]["Bedwars"]["Experience"]
+                console.log(stat7)
+                BedwarsExperenceStatText.innerHTML = `Experience: ${stat7}`
+               } catch(error) {
+                console.log("L user no coins")
+               }
+               try {
+                stat8 = data["player"]["stats"]["Bedwars"]["beds_lost_bedwars"]
+                console.log(stat8)
+                BedsLostStatText.innerHTML = `Beds-Lost: ${stat8}`
+               } catch(error) {
+                console.log("L user no coins")
+               }
+               try {
+                stat9 = data["player"]["stats"]["Bedwars"]["deaths_bedwars"]
+                console.log(stat9)
+                BedsDestroyedStatText.innerHTML = `Deaths: ${stat9}`
+               } catch(error) {
+                console.log("L user no coins")
+               }
+               try {
+                stat10 = data["player"]["stats"]["Bedwars"]["wins_bedwars"]
+                console.log(stat10)
+                GamesWonStatsText.innerHTML = `Won Games: ${stat10}`
+               } catch(error) {
+                console.log("L user no coins")
+               }
+        
+        
+        })
+        .catch(error => console.log("Network Error", error))}
